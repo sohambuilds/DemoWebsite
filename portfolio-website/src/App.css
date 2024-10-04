@@ -1,0 +1,12 @@
+body {
+  background-color: #090909;
+  color: #ffffff;
+}
+
+.glow-text {
+  text-shadow: 0 0 10px rgba(173, 216, 230, 0.5);
+}
+
+.glow-border {
+  box-shadow: 0 0 10px rgba(173, 216, 230, 0.3);
+}
