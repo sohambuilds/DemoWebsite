@@ -10,12 +10,12 @@ const Projects = () => {
     },
     {
       title: "Data Analysis Project",
-      description: "Overview of a data analysis project you've worked on.",
+      description: "Overview of a data analysis project ",
       technologies: ["Python", "Pandas", "Matplotlib"]
     },
     {
       title: "AI Research Paper",
-      description: "Summary of a research paper or study you've conducted.",
+      description: "Summary of a research paper.",
       technologies: ["LaTeX", "PyTorch", "NLTK"]
     }
   ];
