@@ -74,7 +74,7 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.7 }}
             className="text-white"
           >
-            When I'm not diving into datasets or training models, you can find me [your hobbies or interests].
+            When I'm not diving into datasets or training models, you can find me getting high.
           </motion.p>
         </motion.div>
       </motion.div>
