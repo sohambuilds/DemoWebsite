@@ -7,11 +7,11 @@ const About = () => {
 
   const backgroundColor = useTransform(
     scrollY,
-    [0, 500],
+    [0, 300],
     ['rgba(15, 32, 39, 1)', 'rgba(44, 83, 100, 1)']
   );
 
-  const y = useTransform(scrollY, [0, 500], [0, -150]);
+  const y = useTransform(scrollY, [0, 300], [0, -50]);
 
   useEffect(() => {
     const updateMousePosition = (ev) => {
@@ -20,7 +20,7 @@ const About = () => {
         const { left, top, width, height } = ref.current.getBoundingClientRect();
         const x = (clientX - left) / width - 0.5;
         const y = (clientY - top) / height - 0.5;
-        ref.current.style.transform = `perspective(1000px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
+        ref.current.style.transform = `perspective(1000px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg)`;
       }
     };
 
@@ -34,14 +34,14 @@ const About = () => {
   return (
     <motion.section
       style={{ backgroundColor }}
-      className="min-h-screen relative overflow-hidden py-20"
+      className="min-h-screen relative overflow-hidden pt-32 pb-20"
     >
       <motion.div style={{ y }} className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold mb-8 text-center text-white"
+          className="text-4xl font-bold mb-12 text-center text-white"
         >
           About Me
         </motion.h2>
@@ -50,7 +50,7 @@ const About = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg p-8 shadow-lg"
+          className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg p-8 shadow-lg max-w-3xl mx-auto"
         >
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -66,7 +66,7 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="mb-4 text-white"
           >
-            My journey in the world of AI and ML began [brief background]. I'm particularly fascinated by [specific areas of ML you're interested in].
+            My journey in the world of AI and ML began when i was 12 months old. I'm particularly fascinated by web development.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
