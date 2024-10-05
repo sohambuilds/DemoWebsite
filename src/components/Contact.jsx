@@ -22,13 +22,13 @@ const Contact = () => {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <p className="mb-4">
-              <strong>Email:</strong> your.email@example.com
+              <strong>Email:</strong> sohamroy.dev@gmail.com
             </p>
             <p className="mb-4">
-              <strong>LinkedIn:</strong> linkedin.com/in/yourprofile
+              <strong>LinkedIn:</strong> linkedin.com/in/sohamr
             </p>
             <p>
-              <strong>GitHub:</strong> github.com/yourusername
+              <strong>GitHub:</strong> github.com/sohambuilds
             </p>
           </motion.div>
         </div>

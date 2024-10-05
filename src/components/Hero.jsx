@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import SnowfallBackground from './SnowFallBackground';
-
+import MountainScene from './MountainScene';
 const useTypewriter = (words, speed = 100, delay = 1500) => {
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
@@ -97,23 +97,31 @@ const AnimatedGradientBackground = () => {
   };
   
 
-const Hero = () => {
+  const Hero = () => {
     const typewriterText = useTypewriter([
       "Machine Learning Enthusiast",
       "Aspiring ML Engineer",
       "AI Researcher"
     ], 100, 1500);
   
+    const scrollToProjects = () => {
+      const projectsSection = document.getElementById('projects');
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+  
     return (
       <motion.section 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="bg-gray-900 text-white py-20 relative"
+        className="bg-gray-900 text-white relative h-screen flex items-center justify-center"
         id="home"
-      ><AnimatedGradientBackground />
+      >
+        <AnimatedGradientBackground />
         <SnowfallBackground />
-        <div className="container mx-auto px-4 relative z-20">
+        <div className="container mx-auto px-4 relative z-20 text-center">
           <motion.h1 
             className="text-5xl font-bold mb-4"
             initial={{ opacity: 0, y: -20 }}
@@ -134,12 +142,23 @@ const Hero = () => {
             className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={scrollToProjects}
           >
             View My Projects
           </motion.button>
         </div>
+  
+        {/* Your SVG mountain scene here */}
+        <svg
+          viewBox="0 0 1200 300"
+          preserveAspectRatio="none"
+          className="absolute bottom-0 left-0 w-full"
+          style={{ height: "40vh" }}
+        >
+          {/* ... (keep your existing SVG content) */}
+        </svg>
       </motion.section>
     );
   };
   
-export default Hero;
+  export default Hero;
